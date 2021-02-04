@@ -13,17 +13,65 @@ npm install --save reactjs-bottom-navigation
 ## Usage
 
 ```jsx
-import React, { Component } from 'react'
-
-import MyComponent from 'reactjs-bottom-navigation'
+// first import the component and css
+import { BottomNavigation } from 'reactjs-bottom-navigation'
 import 'reactjs-bottom-navigation/dist/index.css'
 
-class Example extends Component {
-  render() {
-    return <MyComponent />
-  }
+function App() {
+  // items
+  const bottomNavItems = [
+    {
+      title: 'Home',
+      icon: <HomeOutlined style={{ fontSize: '18px' }} />,
+      activeIcon: <HomeOutlined style={{ fontSize: '18px', color: '#fff' }} />
+    },
+    {
+      title: 'Search',
+      icon: <SearchOutlined style={{ fontSize: '18px' }} />,
+      activeIcon: <SearchOutlined style={{ fontSize: '18px', color: '#fff' }} />
+    },
+    {
+      title: 'Notifications',
+      icon: <BellOutlined style={{ fontSize: '18px' }} />,
+      activeIcon: <BellOutlined style={{ fontSize: '18px', color: '#fff' }} />
+    },
+    {
+      title: 'Menu',
+      icon: <MenuOutlined style={{ fontSize: '18px' }} />,
+      activeIcon: <MenuOutlined style={{ fontSize: '18px', color: '#fff' }} />,
+      onClick: () => alert('menu clicked')
+    }
+  ]
+
+  return (
+    <div>
+      <BottomNavigation
+        items={bottomNavItems}
+        defaultSelectedTab={0}
+        onItemClick={(item) => console.log(item)}
+      />
+    </div>
+  )
 }
 ```
+
+## Props
+
+| Props              | Type                  | default | description                                                                   |
+| ------------------ | --------------------- | ------- | ----------------------------------------------------------------------------- |
+| items              | Array of item objects | -       | see the below table                                                           |
+| defaultSelectedTab | number                | null    | default active item                                                           |
+| onItemClick        | function              | -       | triggers when an item is clicked and it returns the item including it's index |
+| noActiveBg         | boolean               | false   | disable active item background                                                |
+
+## Item Structure
+
+| Prop       | Type          | description                                                                    |
+| ---------- | ------------- | ------------------------------------------------------------------------------ |
+| title      | string        | item title                                                                     |
+| icon       | jsx or string | item icon, can be any element                                                  |
+| activeIcon | jsx or string | item active icon, can be any element                                           |
+| onClick    | function      | triggers when the item is clicked and it returns the item including it's index |
 
 ## License
 

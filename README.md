@@ -12,6 +12,7 @@
 
 ## Introduction
 ![enter image description here](https://www.hoseinh.com/wp-content/uploads/2021/02/Annotation-2021-02-04-171944.jpg)
+
 Bottom Navigation Menu component for react js
 full Tutorial: [click here](https://www.hoseinh.com/reactjs-bottom-navigation/)
   
@@ -152,7 +153,15 @@ onItemClick={(item) =>  console.log(item)}
 
 | onClick | function | triggers when the item is clicked and it returns the item including it's index |
 
-  
+  ## Customization
+
+the component elements have the following class names which you can assign new styles to them:
+
+Bottom Navigation: _bottom-nav_
+
+Items: _bottom-nav-item_
+
+titles: _bottom-nav-item–title_
 
 ## License
 

@@ -1,10 +1,34 @@
 import React from 'react'
 
-import { ExampleComponent } from 'reactjs-bottom-navigation'
+import { BottomNavigation } from 'reactjs-bottom-navigation'
 import 'reactjs-bottom-navigation/dist/index.css'
 
-const App = () => {
-  return <ExampleComponent text="Create React Library Example 😄" />
+function App() {
+  const bottomNavItems = [
+    {
+      title: 'Home'
+    },
+    {
+      title: 'Search'
+    },
+    {
+      title: 'Notifications'
+    },
+    {
+      title: 'Menu',
+      onClick: () => alert('menu clicked')
+    }
+  ]
+
+  return (
+    <div>
+      <BottomNavigation
+        items={bottomNavItems}
+        defaultSelectedTab={0}
+        onItemClick={(item) => console.log(item)}
+      />
+    </div>
+  )
 }
 
 export default App

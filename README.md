@@ -1,24 +1,16 @@
-
 # reactjs-bottom-navigation
-
-  
 
 > reactjs bottom navigation menu component
 
-  
-
- [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
-
+[![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
 ## Introduction
+
 ![enter image description here](https://www.hoseinh.com/wp-content/uploads/2021/02/Annotation-2021-02-04-171944.jpg)
 Bottom Navigation Menu component for react js
 full Tutorial: [click here](https://www.hoseinh.com/reactjs-bottom-navigation/)
-  
 
 ## Installation
-
-  
 
 ```bash
 
@@ -26,101 +18,67 @@ npm install --save reactjs-bottom-navigation
 
 ```
 
-  
-
 ## Usage
 
-  
-
 ```jsx
-
 // first import the component and css
 
-import { BottomNavigation } from  'reactjs-bottom-navigation'
+import { BottomNavigation } from 'reactjs-bottom-navigation'
 
-import  'reactjs-bottom-navigation/dist/index.css'
+import 'reactjs-bottom-navigation/dist/index.css'
 
-  
+function App() {
+  // items
 
-function  App() {
+  const bottomNavItems = [
+    {
+      title: 'Home',
 
-// items
+      icon: <HomeOutlined style={{ fontSize: '18px' }} />,
 
-const  bottomNavItems = [
+      activeIcon: <HomeOutlined style={{ fontSize: '18px', color: '#fff' }} />
+    },
 
-{
+    {
+      title: 'Search',
 
-title:  'Home',
+      icon: <SearchOutlined style={{ fontSize: '18px' }} />,
 
-icon:  <HomeOutlined  style={{ fontSize:  '18px' }}  />,
+      activeIcon: <SearchOutlined style={{ fontSize: '18px', color: '#fff' }} />
+    },
 
-activeIcon:  <HomeOutlined  style={{ fontSize:  '18px', color:  '#fff' }}  />
+    {
+      title: 'Notifications',
 
-},
+      icon: <BellOutlined style={{ fontSize: '18px' }} />,
 
-{
+      activeIcon: <BellOutlined style={{ fontSize: '18px', color: '#fff' }} />
+    },
 
-title:  'Search',
+    {
+      title: 'Menu',
 
-icon:  <SearchOutlined  style={{ fontSize:  '18px' }}  />,
+      icon: <MenuOutlined style={{ fontSize: '18px' }} />,
 
-activeIcon:  <SearchOutlined  style={{ fontSize:  '18px', color:  '#fff' }}  />
+      activeIcon: <MenuOutlined style={{ fontSize: '18px', color: '#fff' }} />,
 
-},
+      onClick: () => alert('menu clicked')
+    }
+  ]
 
-{
-
-title:  'Notifications',
-
-icon:  <BellOutlined  style={{ fontSize:  '18px' }}  />,
-
-activeIcon:  <BellOutlined  style={{ fontSize:  '18px', color:  '#fff' }}  />
-
-},
-
-{
-
-title:  'Menu',
-
-icon:  <MenuOutlined  style={{ fontSize:  '18px' }}  />,
-
-activeIcon:  <MenuOutlined  style={{ fontSize:  '18px', color:  '#fff' }}  />,
-
-onClick: () =>  alert('menu clicked')
-
+  return (
+    <div>
+      <BottomNavigation
+        items={bottomNavItems}
+        defaultSelectedTab={0}
+        onItemClick={(item) => console.log(item)}
+      />
+    </div>
+  )
 }
-
-]
-
-  
-
-return (
-
-<div>
-
-<BottomNavigation
-
-items={bottomNavItems}
-
-defaultSelectedTab={0}
-
-onItemClick={(item) =>  console.log(item)}
-
-/>
-
-</div>
-
-)
-
-}
-
 ```
 
-  
-
 ## Props
-
-  
 
 | Props | Type | default | description |
 
@@ -134,11 +92,7 @@ onItemClick={(item) =>  console.log(item)}
 
 | noActiveBg | boolean | false | disable active item background |
 
-  
-
 ## Item Structure
-
-  
 
 | Prop | Type | description |
 
@@ -152,7 +106,7 @@ onItemClick={(item) =>  console.log(item)}
 
 | onClick | function | triggers when the item is clicked and it returns the item including it's index |
 
-  ## Customization
+## Customization
 
 the component elements have the following class names which you can assign new styles to them:
 
@@ -163,7 +117,5 @@ Items: _bottom-nav-item_
 titles: _bottom-nav-item–title_
 
 ## License
-
-  
 
 MIT © [hoseinhamzei](https://github.com/hoseinhamzei)

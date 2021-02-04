@@ -23,8 +23,7 @@ npm install --save reactjs-bottom-navigation
 ```jsx
 // first import the component and css
 
-import { BottomNavigation } from 'reactjs-bottom-navigation'
-
+import BottomNavigation from 'reactjs-bottom-navigation'
 import 'reactjs-bottom-navigation/dist/index.css'
 
 function App() {

@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
-import styles from './styles.module.css'
 
-export const BottomNavigation = ({
+const BottomNavigation = ({
   items,
   defaultSelectedTab = null,
   onItemClick,
@@ -14,9 +13,7 @@ export const BottomNavigation = ({
       <div
         key={'nav-item-' + idx}
         id={'nav-item-' + idx}
-        className={`${styles['bottom-nav-item']} ${
-          current === idx && styles.active
-        }`}
+        className={`bottom-nav-item ${current === idx && 'active'}`}
         style={noActiveBg && { backgroundColor: 'transparent' }}
         onClick={() => {
           setCurrent(idx)
@@ -30,11 +27,11 @@ export const BottomNavigation = ({
       >
         {current !== idx && item.icon ? item.icon : ''}
         {current === idx && item.activeIcon ? item.activeIcon : ''}
-        {item.title && (
-          <p className={styles['bottom-nav-item']}>{item.title}</p>
-        )}
+        {item.title && <p className='bottom-nav-item--title'>{item.title}</p>}
       </div>
     )
   })
-  return <div className={styles['bottom-nav']}>{navItems}</div>
+  return <div className='bottom-nav'>{navItems}</div>
 }
+
+export default BottomNavigation

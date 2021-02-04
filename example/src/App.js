@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { BottomNavigation } from 'reactjs-bottom-navigation'
+import BottomNavigation from 'reactjs-bottom-navigation'
 import 'reactjs-bottom-navigation/dist/index.css'
 
 function App() {

@@ -20,7 +20,7 @@
   height: 100;
 }
 
-.active {
+.bottom-nav-item.active {
   background-color: #3871ce;
   color: white;
 }

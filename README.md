@@ -69,7 +69,7 @@ function App() {
     <div>
       <BottomNavigation
         items={bottomNavItems}
-        defaultSelectedTab={0}
+        defaultSelected={0}
         onItemClick={(item) => console.log(item)}
       />
     </div>
@@ -85,11 +85,15 @@ function App() {
 
 | items | Array of item objects | - | see the below table |
 
-| defaultSelectedTab | number | null | default active item |
+| defaultSelected | number | null | default active item |
 
 | onItemClick | function | - | triggers when an item is clicked and it returns the item including it's index |
 
 | noActiveBg | boolean | false | disable active item background |
+
+| activeBgColor | boolean | false | custom active background color |
+
+| activeTextColor | boolean | false | custom active text color |
 
 ## Item Structure
 
@@ -114,6 +118,8 @@ Bottom Navigation: _bottom-nav_
 Items: _bottom-nav-item_
 
 titles: _bottom-nav-item–title_
+
+you can also use "activeBgColor" and "activeTextColor" props
 
 ## License
 

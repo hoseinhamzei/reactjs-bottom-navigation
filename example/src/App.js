@@ -24,8 +24,10 @@ function App() {
     <div>
       <BottomNavigation
         items={bottomNavItems}
-        defaultSelectedTab={0}
+        defaultSelected={0}
         onItemClick={(item) => console.log(item)}
+        activeBgColor={'#000000'}
+        activeTextColor={'yellow'}
       />
     </div>
   )

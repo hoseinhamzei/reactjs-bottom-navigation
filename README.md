@@ -93,7 +93,7 @@ function App() {
 ## Item Structure
 
 | Prop | Type | description |
-|--|--|--|--|
+|--|--|--|
 | title | string | item title |
 | icon | jsx or string | item icon, can be any element |
 | activeIcon | jsx or string | item active icon, can be any element |

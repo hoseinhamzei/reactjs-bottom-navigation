@@ -1,3 +1,4 @@
+
 # reactjs-bottom-navigation
 
 > reactjs bottom navigation menu component
@@ -81,34 +82,23 @@ function App() {
 ## Props
 
 | Props | Type | default | description |
-
 | ------------------ | --------------------- | ------- | ----------------------------------------------------------------------------- |
-
 | items | Array of item objects | - | see the below table |
-
 | defaultSelected | number | null | default active item |
-
 | onItemClick | function | - | triggers when an item is clicked and it returns the item including it's index |
-
 | noActiveBg | boolean | false | disable active item background |
-
 | activeBgColor | boolean | false | custom active background color |
-
 | activeTextColor | boolean | false | custom active text color |
 
 ## Item Structure
 
 | Prop | Type | description |
-
-| ---------- | ------------- | ------------------------------------------------------------------------------ |
-
+|--|--|--|--|
 | title | string | item title |
-
 | icon | jsx or string | item icon, can be any element |
-
 | activeIcon | jsx or string | item active icon, can be any element |
-
 | onClick | function | triggers when the item is clicked and it returns the item including it's index |
+
 
 ## Customization
 

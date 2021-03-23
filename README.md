@@ -87,8 +87,8 @@ function App() {
 | defaultSelected | number | null | default active item |
 | onItemClick | function | - | triggers when an item is clicked and it returns the item including it's index |
 | noActiveBg | boolean | false | disable active item background |
-| activeBgColor | boolean | false | custom active background color |
-| activeTextColor | boolean | false | custom active text color |
+| activeBgColor | string | - | custom active background color code |
+| activeTextColor | string | - | custom active text color code |
 
 ## Item Structure
 

@@ -2,13 +2,17 @@ import React, { useState } from 'react'
 
 const BottomNavigation = ({
   items,
-  defaultSelected = null,
+  selected = null,
   onItemClick,
   noActiveBg,
   activeBgColor,
   activeTextColor
 }) => {
-  const [current, setCurrent] = useState(defaultSelected)
+  const [current, setCurrent] = useState(selected);
+
+  useEffect(() => {
+      setCurrent(selected)
+  }, [selected]);
 
   function getItemStyle() {
     const style = {}

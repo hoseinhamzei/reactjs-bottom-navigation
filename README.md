@@ -71,7 +71,7 @@ function App() {
     <div>
       <BottomNavigation
         items={bottomNavItems}
-        defaultSelected={0}
+        selected={0}
         onItemClick={(item) => console.log(item)}
       />
     </div>

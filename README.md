@@ -102,8 +102,6 @@ titles: _bottom-nav-item–title_
 
 you can also use "activeBgColor" and "activeTextColor" props
 
-Version 2.0 coming soon!
-
 ## License
 
 MIT © [hoseinhamzei](https://github.com/hoseinhamzei)

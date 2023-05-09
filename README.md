@@ -1,5 +1,6 @@
 
 # reactjs-bottom-navigation
+version 2 coming soon
 
 > reactjs bottom navigation menu component
 

@@ -127,8 +127,11 @@ export  default  App;
 the component elements have the following class names which you can assign new styles to them:
 
 Bottom Navigation: _bottom-nav_
+
 Items: _bottom-nav-item_
+
 titles: _bottom-nav-item–title_
+
 you can also use "activeBgColor" and "activeTextColor" props and the item render method
 
   

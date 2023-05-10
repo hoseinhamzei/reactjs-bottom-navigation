@@ -66,18 +66,16 @@ all item properties are optional, if no property is provided the item will take 
 ## Usage
 To use the component, you need to provide an array of "items" which represent the individual navigation options in the bottom navigation bar. Each item can have a "title", an "icon", or both. You can also provide a custom rendering function to create your own content for the item.
 
-Example (TypeScript):
+Example:
 
 ```jsx
 
 import  React  from  "react";
-import {
-BottomNavigation, BottomNavigationItemType,
-} from  "reactjs-bottom-navigation";
+import { BottomNavigation } from  "reactjs-bottom-navigation";
 
 function  App() {
 
-const  bottomNavItems: BottomNavigationItemType[] = [
+const  bottomNavItems = [
 	{
 		title:  "Home",
 		onClick: ({ id }) =>  alert("menu clicked " + id),

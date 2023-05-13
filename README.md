@@ -48,7 +48,7 @@ npm install  --save  reactjs-bottom-navigation
 | selected | number | null | (optional) The index of the currently selected item, used for setting a default active item and/or controlling active state manually |
 | onItemClick | function | - | (optional)triggers when an item is clicked and it returns the item |
 | activeBgColor | string | - | (optional) custom active background color code |
-| activeTextColor | string | black | custom active text color code |
+| activeTextColor | string | black | (optional) custom active text color code |
 
 ## Item Structure
 all item properties are optional, if no property is provided the item will take space and it will be empty

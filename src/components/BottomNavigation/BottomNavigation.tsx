@@ -34,7 +34,6 @@ export interface BottomNavigationProps {
  * @property {BottomNavigationItem[]} items - The array of items to display in the navigation.
  * @property {number|null=} selected - The index of the currently selected item.
  * @property {function(params: {id: number, [key: string]: any}): void=} onItemClick - A callback function to execute when an item is clicked.
- * @property {boolean=} noActiveBg - Whether to disable the background color for the active item.
  * @property {string=} activeBgColor - The background color to use for the active item.
  * @property {string=} activeTextColor - The text color to use for the active item.
  *

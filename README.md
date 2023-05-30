@@ -135,13 +135,6 @@ titles: _bottom-nav-item–title_
 
 you can also use "activeBgColor" and "activeTextColor" props and the item render method
 
-## Upcoming Features (contributions are welcome)
-
-- auto show/hide on scroll option
-- multiple item placement options
-- no styles option
-- shadow option
-
   
 
 ## License

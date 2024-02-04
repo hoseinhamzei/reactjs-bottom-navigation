@@ -1,5 +1,5 @@
 import React from "react";
-import { BottomNavigation } from "reactjs-bottom-navigation";
+import { BottomNavigation } from "./components/BottomNavigation";
 
 function Test() {
   const bottomNavItems = [

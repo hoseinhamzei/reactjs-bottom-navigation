@@ -1,6 +1,6 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import "./index.css";
-import {BottomNavigationItem} from "./BottomNavigationItem";
+import { BottomNavigationItem } from "./BottomNavigationItem";
 
 export interface BottomNavigationItemType {
   title?: string;

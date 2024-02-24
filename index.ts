@@ -1,1 +1,1 @@
-export {BottomNavigation} from "./src/components/BottomNavigation/BottomNavigation";
+export { BottomNavigation } from "./src/components/BottomNavigation";

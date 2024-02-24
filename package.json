@@ -1,6 +1,6 @@
 {
   "name": "reactjs-bottom-navigation",
-  "version": "2.0.6",
+  "version": "2.0.9",
   "module": "./lib/esm/index.js",
   "main": "./lib/cjs/index.js",
   "files": [
@@ -31,7 +31,10 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "compile": "tsc"
+    "clean": "rimraf lib",
+    "copy-files": "copyfiles -e **/*.ts -e **/*.tsx -u l src/**/*.css lib/esm/src",
+    "tsc": "tsc -p tsconfig.json && tsc -p tsconfig-cjs.json",
+    "prepare": "npm run tsc"
   },
   "eslintConfig": {
     "extends": [

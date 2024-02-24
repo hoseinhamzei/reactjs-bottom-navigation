@@ -1,4 +1,4 @@
-/// <reference types="react" />
+import React from "react";
 import "./index.css";
 export interface BottomNavigationItemType {
     title?: string;

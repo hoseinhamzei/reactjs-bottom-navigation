@@ -11,6 +11,7 @@
 
 [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 [![npm](https://img.shields.io/npm/v/reactjs-bottom-navigation.svg)](https://www.npmjs.com/package/reactjs-bottom-navigation)
+![NPM Downloads](https://img.shields.io/npm/dt/reactjs-bottom-navigation)
 
   
 

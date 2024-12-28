@@ -33,7 +33,7 @@ export const BottomNavigationItem: React.FC<BottomNavigationItemProps> = ({
               ? item.activeIcon
               : item.icon
             : ""}
-          {item.title && <p className="bottom-nav-item--title">{item.title}</p>}
+          {item.title && <p className="bottom-nav-item-title">{item.title}</p>}
         </>
       )}
     </div>

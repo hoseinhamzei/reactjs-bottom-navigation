@@ -9,6 +9,12 @@
   z-index: 1;
   height: 64px;
   border-top: 1px solid #ebebeb;
+  transform: translateY(0%);
+  transition: transform 0.3s ease;
+}
+
+.bottom-nav.hidden{
+  transform: translateY(100%);
 }
 
 .bottom-nav-item {
@@ -23,7 +29,7 @@
   cursor: pointer;
 }
 
-.bottom-nav-item--title {
+.bottom-nav-item-title {
   margin-top: 4px;
   font-size: 12px;
   margin-bottom: 0px;

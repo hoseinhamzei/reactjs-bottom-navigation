@@ -6,6 +6,8 @@ function Test() {
   const bottomNavItems = [
     {
       title: "Home",
+      icon: <span>🏠</span>,
+      activeIcon: <span style={{ backgroundColor: "blue" }}>🏠</span>,
       onClick: ({ id }) => alert("menu clicked " + id),
     },
     // items can have either title, icon or both or neither!
@@ -24,11 +26,17 @@ function Test() {
     <main className="test-page">
       <BottomNavigation
         items={bottomNavItems}
-        selected={0}
-        onItemClick={(item) => console.log(item)}
-        activeBgColor="slateBlue"
-        activeTextColor="white"
-        hideOnScroll
+        activeBgColor="green"
+        activeTextColor="yellow"
+        // selected={0}
+        // onItemClick={(item) => console.log(item)}
+        // activeBgColor="slateBlue"
+        // activeTextColor="white"
+        // hideOnScroll
+        // style={{
+        //   height: "60px",
+        //   backgroundColor: "lightGray",
+        // }}
       />
     </main>
   );

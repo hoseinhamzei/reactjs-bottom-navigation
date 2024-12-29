@@ -7,6 +7,7 @@ interface BottomNavigationItemProps {
   id: number;
   getItemStyle: () => React.CSSProperties;
   onClick: (id: number, item: BottomNavigationItemType) => void;
+  style?: React.CSSProperties;
 }
 
 export const BottomNavigationItem: React.FC<BottomNavigationItemProps> = ({
@@ -15,13 +16,14 @@ export const BottomNavigationItem: React.FC<BottomNavigationItemProps> = ({
   id,
   getItemStyle,
   onClick,
+  style = {},
 }) => {
   const isActive = current === id;
   return (
     <div
       id={"nav-item-" + id}
       className={`bottom-nav-item ${isActive ? "active" : ""}`}
-      style={isActive ? getItemStyle() : {}}
+      style={isActive ? {...getItemStyle(), ...style} : style}
       onClick={() => onClick(id, item)}
     >
       {item.render ? (

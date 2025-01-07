@@ -28,7 +28,6 @@
   },
   "include": [
     "src/components",
-    "src/hooks",
   ],
   "exclude":["node_modules"]
 }

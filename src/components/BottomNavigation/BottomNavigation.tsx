@@ -20,6 +20,7 @@ export interface BottomNavigationProps {
   activeTextColor?: string;
   hideOnScroll?: boolean;
   style?: React.CSSProperties;
+  className?: string;
 }
 
 /**
@@ -36,6 +37,7 @@ export const BottomNavigation: React.FC<BottomNavigationProps> = ({
   activeTextColor,
   hideOnScroll = false,
   style = {},
+  className = "",
 }) => {
 
   const [state, setSelected] = useBottomNavigation(selected, hideOnScroll);
@@ -72,7 +74,7 @@ export const BottomNavigation: React.FC<BottomNavigationProps> = ({
 
   return (
     <div
-      className={state.hidden ? "bottom-nav hidden" : "bottom-nav"}
+      className={`${state.hidden ? "bottom-nav hidden" : "bottom-nav"} ${className}`}
       style={style}
       role="navigation"
     >

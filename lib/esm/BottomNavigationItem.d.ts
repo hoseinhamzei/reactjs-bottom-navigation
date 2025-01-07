@@ -6,6 +6,7 @@ interface BottomNavigationItemProps {
     id: number;
     getItemStyle: () => React.CSSProperties;
     onClick: (id: number, item: BottomNavigationItemType) => void;
+    style?: React.CSSProperties;
 }
 export declare const BottomNavigationItem: React.FC<BottomNavigationItemProps>;
 export {};

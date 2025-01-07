@@ -73,18 +73,25 @@ describe("BottomNavigation", () => {
     expect(nav).not.toHaveClass("hidden");
   });
 
-  it("applies active styles correctly", () => {
+  it("applies active status and active styles properly", () => {
     render(
-      <BottomNavigation
-        {...props}
-        activeBgColor="green"
-        activeTextColor="yellow"
-      />
+      <BottomNavigation {...props} activeBgColor="red" activeTextColor="blue" />
     );
-    const item1 = screen.getByText("Item 1");
+    const item1 = screen.getByText("Item 2");
     fireEvent.click(item1);
-    expect(item1.parentElement).toHaveStyle("background-color: green");
-    expect(item1.parentElement).toHaveStyle("color: yellow");
+
+    expect(item1).toBeInTheDocument();
+    console.log(item1.style);
+
+    const tabs = screen.getAllByRole("tab");
+
+    const activeTab = tabs.find(
+      (tab) => tab.getAttribute("aria-selected") === "true"
+    );
+
+    expect(activeTab).toBeInTheDocument();
+    expect(activeTab).toHaveStyle("background-color: red");
+    expect(activeTab).toHaveStyle("color: blue");
   });
 
   it("renders custom content when render prop is provided", () => {

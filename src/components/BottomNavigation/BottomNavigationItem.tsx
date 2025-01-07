@@ -25,6 +25,8 @@ export const BottomNavigationItem: React.FC<BottomNavigationItemProps> = ({
       className={`bottom-nav-item ${isActive ? "active" : ""}`}
       style={isActive ? {...getItemStyle(), ...style} : style}
       onClick={() => onClick(id, item)}
+      role="tab"
+      aria-selected={isActive}
     >
       {item.render ? (
         item.render({ isActive, id: id })

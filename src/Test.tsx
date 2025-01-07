@@ -22,21 +22,23 @@ function Test() {
     },
   ];
 
+  function handleClick(id) {
+    console.log("clicked", id);
+  }
+
   return (
     <main className="test-page">
       <BottomNavigation
         items={bottomNavItems}
-        activeBgColor="green"
+        activeBgColor="blue"
         activeTextColor="yellow"
-        // selected={0}
-        // onItemClick={(item) => console.log(item)}
-        // activeBgColor="slateBlue"
-        // activeTextColor="white"
-        // hideOnScroll
-        // style={{
-        //   height: "60px",
-        //   backgroundColor: "lightGray",
-        // }}
+        selected={0}
+        onItemClick={handleClick}
+        hideOnScroll
+        style={{
+          height: "60px",
+          backgroundColor: "lightGray",
+        }}
       />
     </main>
   );

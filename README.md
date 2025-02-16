@@ -65,37 +65,32 @@ import React, { useState } from "react";
 import { BottomNavigation } from "reactjs-bottom-navigation";
 
 function App() {
-  const [menuOpen, setMenuOpen] = useState(false);
-
   const bottomNavItems = [
     {
       title: "Home",
+      onClick: ({ id }) => alert("Menu clicked " + id),
       icon: <HomeIcon />,
-      activeIcon: <HomeIcon color="#fff" />,
-      // Control active state based on route
-      active: window.location.pathname === "/"
+      activeIcon: <HomeIcon color="#fff" />
     },
     {
       title: "Search",
-      icon: <SearchIcon />,
-      // Control active state based on route
-      active: window.location.pathname === "/search"
     },
     {
-      title: "Menu",
-      icon: <MenuIcon />,
-      // Control active state based on local state
-      active: menuOpen,
-      onClick: () => setMenuOpen(!menuOpen)
-    }
+      render: ({ isActive, id }) => isActive ? <strong>{id}</strong> : <span>{id}</span>,
+    },
   ];
 
   return (
     <div>
       <BottomNavigation
         items={bottomNavItems}
+        selected={0}
+        onItemClick={(item) => console.log(item)}
         activeBgColor="slateBlue"
         activeTextColor="white"
+        hideOnScroll={true}
+        className="custom-bottom-nav"
+        style={{ position: "fixed", bottom: 0, width: "100%" }}
       />
     </div>
   );

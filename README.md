@@ -68,7 +68,7 @@ function App() {
   const bottomNavItems = [
     {
       title: "Home",
-      onClick: ({ id }) => alert("Menu clicked " + id),
+      onClick: ({ id }) => alert("Home clicked " + id),
       icon: <HomeIcon />,
       activeIcon: <HomeIcon color="#fff" />
     },

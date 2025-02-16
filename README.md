@@ -99,21 +99,6 @@ function App() {
 export default App;
 ```
 
-### Active State Control
-
-The component provides two ways to control the active state of items:
-
-1. **Default Behavior**: Using the `selected` prop to control active state by index
-2. **Custom Control**: Using the `active` prop on individual items for more granular control
-
-The `active` prop is useful when you need to:
-- Control active states based on routes
-- Have multiple active items simultaneously
-- Toggle items independently
-- Control active state based on external conditions
-
-If the `active` prop is not provided for an item, it falls back to the default selected index behavior.
-
 ## Customization
 
 The component offers multiple ways to customize:

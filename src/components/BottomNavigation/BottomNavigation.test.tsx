@@ -111,4 +111,68 @@ describe("BottomNavigation", () => {
     fireEvent.click(screen.getByText("Inactive 0"));
     expect(screen.getByText("Active 0")).toBeInTheDocument();
   });
+
+  it("prioritizes item-level active prop over selected index", () => {
+    const itemsWithActive = [
+      {
+        title: "Item 1",
+        active: true
+      },
+      {
+        title: "Item 2",
+        active: false
+      }
+    ];
+    
+    render(<BottomNavigation items={itemsWithActive} selected={1} />);
+    
+    const tabs = screen.getAllByRole("tab");
+    expect(tabs[0]).toHaveAttribute("aria-selected", "true");
+    expect(tabs[1]).toHaveAttribute("aria-selected", "false");
+  });
+
+  it("falls back to selected index when active prop is not provided", () => {
+    const mixedItems = [
+      {
+        title: "Item 1",
+        active: true
+      },
+      {
+        title: "Item 2" // No active prop
+      },
+      {
+        title: "Item 3" // No active prop
+      }
+    ];
+    
+    render(<BottomNavigation items={mixedItems} selected={2} />);
+    
+    const tabs = screen.getAllByRole("tab");
+    expect(tabs[0]).toHaveAttribute("aria-selected", "true"); 
+    expect(tabs[1]).toHaveAttribute("aria-selected", "false");
+    expect(tabs[2]).toHaveAttribute("aria-selected", "true");
+  });
+
+  it("applies active styles to items with active prop", () => {
+    const itemsWithActive = [
+      {
+        title: "Item 1",
+        active: true
+      }
+    ];
+    
+    render(
+      <BottomNavigation 
+        items={itemsWithActive} 
+        activeBgColor="red" 
+        activeTextColor="blue"
+      />
+    );
+    
+    const activeTab = screen.getByRole("tab");
+    expect(activeTab).toHaveStyle({
+      backgroundColor: "red",
+      color: "blue"
+    });
+  });
 });

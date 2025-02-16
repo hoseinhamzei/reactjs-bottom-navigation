@@ -1,8 +1,10 @@
-import React from "react";
-import { BottomNavigation } from "./components/BottomNavigation";
+import React, { useState } from "react";
+import { BottomNavigation } from "./components/BottomNavigation/BottomNavigation";
 import "./assets/test.css";
 
 function Test() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   const bottomNavItems = [
     {
       title: "Home",
@@ -20,6 +22,12 @@ function Test() {
       render: ({ isActive, id }) =>
         isActive ? <strong>{id}</strong> : <span>{id}</span>,
     },
+    {
+      title: "Menu",
+      icon: <span>☰</span>,
+      active: menuOpen, // this prop will override the default active state
+      onClick: () => setMenuOpen(!menuOpen)
+    },
   ];
 
   function handleClick(id) {
@@ -32,7 +40,7 @@ function Test() {
         items={bottomNavItems}
         activeBgColor="blue"
         activeTextColor="yellow"
-        selected={0}
+        selected={0} // can be used to manually control the active item using state
         onItemClick={handleClick}
         hideOnScroll
         style={{

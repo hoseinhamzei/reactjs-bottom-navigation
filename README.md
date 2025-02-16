@@ -51,7 +51,8 @@ All item properties are optional. If no property is provided, the item will occu
 | icon       | JSX.Element                  | (optional) Item icon                                                       |
 | activeIcon | JSX.Element                  | (optional) Item active icon                                                |
 | onClick    | function                     | (optional) Triggered when the item is clicked, returns the clicked item    |
-| render     | ({ isActive: boolean; id: number }) => JSX.Element | (optional) Custom render function for the item                              |
+| render     | ({ isActive: boolean; id: number }) => JSX.Element | (optional) Custom render function for the item       |
+| active     | boolean                      | (optional) Custom active state control. If not provided, falls back to selected index behavior |
 
 ## Usage
 
@@ -60,36 +61,41 @@ To use the component, provide an array of `items` representing the navigation op
 Example:
 
 ```jsx
-import React from "react";
+import React, { useState } from "react";
 import { BottomNavigation } from "reactjs-bottom-navigation";
 
 function App() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   const bottomNavItems = [
     {
       title: "Home",
-      onClick: ({ id }) => alert("Menu clicked " + id),
       icon: <HomeIcon />,
-      activeIcon: <HomeIcon color="#fff" />
+      activeIcon: <HomeIcon color="#fff" />,
+      // Control active state based on route
+      active: window.location.pathname === "/"
     },
     {
       title: "Search",
+      icon: <SearchIcon />,
+      // Control active state based on route
+      active: window.location.pathname === "/search"
     },
     {
-      render: ({ isActive, id }) => isActive ? <strong>{id}</strong> : <span>{id}</span>,
-    },
+      title: "Menu",
+      icon: <MenuIcon />,
+      // Control active state based on local state
+      active: menuOpen,
+      onClick: () => setMenuOpen(!menuOpen)
+    }
   ];
 
   return (
     <div>
       <BottomNavigation
         items={bottomNavItems}
-        selected={0}
-        onItemClick={(item) => console.log(item)}
         activeBgColor="slateBlue"
         activeTextColor="white"
-        hideOnScroll={true}
-        className="custom-bottom-nav"
-        style={{ position: "fixed", bottom: 0, width: "100%" }}
       />
     </div>
   );
@@ -97,6 +103,21 @@ function App() {
 
 export default App;
 ```
+
+### Active State Control
+
+The component provides two ways to control the active state of items:
+
+1. **Default Behavior**: Using the `selected` prop to control active state by index
+2. **Custom Control**: Using the `active` prop on individual items for more granular control
+
+The `active` prop is useful when you need to:
+- Control active states based on routes
+- Have multiple active items simultaneously
+- Toggle items independently
+- Control active state based on external conditions
+
+If the `active` prop is not provided for an item, it falls back to the default selected index behavior.
 
 ## Customization
 

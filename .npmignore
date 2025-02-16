@@ -1,0 +1,12 @@
+src/
+public/
+coverage/
+.github/
+.vscode/
+node_modules/
+.gitignore
+.prettierrc
+tsconfig.json
+tsconfig-cjs.json
+*.test.ts
+*.test.tsx

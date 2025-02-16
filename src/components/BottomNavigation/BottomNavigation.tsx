@@ -5,10 +5,11 @@ import useBottomNavigation from "../../hooks/useBottomNavigation";
 
 export interface BottomNavigationItemType {
   title?: string;
-  icon?: JSX.Element;
-  activeIcon?: JSX.Element;
-  render?: (params: { isActive: boolean; id: number }) => JSX.Element;
+  icon?: React.JSX.Element;
+  activeIcon?: React.JSX.Element;
+  render?: (params: { isActive: boolean; id: number }) => React.JSX.Element;
   onClick?: (params: { id: number;[key: string]: any }) => void;
+  active?: boolean;
 }
 
 export interface BottomNavigationProps {

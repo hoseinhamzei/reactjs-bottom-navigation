@@ -18,7 +18,7 @@ export const BottomNavigationItem: React.FC<BottomNavigationItemProps> = ({
   onClick,
   style = {},
 }) => {
-  const isActive = current === id;
+  const isActive = item.active !== undefined ? item.active : current === id;
   return (
     <div
       id={"nav-item-" + id}

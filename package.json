@@ -1,8 +1,7 @@
 {
   "name": "reactjs-bottom-navigation",
-  "version": "2.1.1",
-  "module": "./lib/esm/index.js",
-  "main": "./lib/cjs/index.js",
+  "description": "A flexible bottom navigation component for React applications",
+  "version": "2.2.0",
   "keywords": [
     "react",
     "reactjs",
@@ -14,9 +13,16 @@
     "react bottom navigation component"
   
   ],
+  "main": "./lib/cjs/index.js",
+  "module": "./lib/esm/index.js",
+  "types": "./lib/esm/index.d.ts",
+  "sideEffects": false,
   "files": [
     "lib/"
   ],
+  "publishConfig": {
+    "access": "public"
+  },
   "author": "hoseinhamzei",
   "license": "MIT",
   "repository": "hoseinhamzei/reactjs-bottom-navigation",
@@ -41,9 +47,10 @@
   "scripts": {
     "start": "react-scripts start",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
+    "build": "npm run clean && npm run tsc && npm run copy-files",
+    "prepare": "npm run build",
     "clean": "rimraf lib",
-    "copy-files": "copyfiles -e **/*.ts -e **/*.tsx -u l src/**/*.css lib/esm/src",
+    "copy-files": "copyfiles -e **/*.ts -e **/*.tsx -u 1 src/**/*.css lib/esm/src",
     "tsc": "tsc -p tsconfig.json && tsc -p tsconfig-cjs.json"
   },
   "eslintConfig": {

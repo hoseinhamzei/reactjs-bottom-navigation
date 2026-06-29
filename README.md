@@ -18,7 +18,7 @@
 
 ## Introduction
 
-![Preview](https://www.hoseinh.com/wp-content/uploads/2021/02/Annotation-2021-02-04-171944.jpg)
+![Preview](https://www.hosein.me/wp-content/uploads/2021/02/Annotation-2021-02-04-171944.jpg)
 
 "ReactJS Bottom Navigation" is a lightweight and flexible component that provides a customizable bottom navigation experience for your React applications. This component has been fully re-implemented in TypeScript in version 2, providing a more robust and type-safe development experience. With a range of options to customize it.
 
